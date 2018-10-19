@@ -1,0 +1,20 @@
+<div class="home-banner">
+<h1>Cocktails</h1>
+
+<% @cocktails.each do |cocktail| %>
+  <h2><%= cocktail.name %></h2>
+  <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+
+<% end %>
+
+<br>
+<br>
+
+
+<%= link_to new_cocktail_path do %>
+  <i class="fa fa-plus"></i> Add a new cocktail
+  <% end  %>
+
+</div>
+
+

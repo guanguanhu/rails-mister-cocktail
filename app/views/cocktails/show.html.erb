@@ -1,0 +1,31 @@
+<h1><%= @cocktail.name %></h1>
+
+<div class="container">
+  <%= link_to edit_cocktail_path(@cocktail), class: 'pull-right btn btn-default' do %>
+  <i class="fa fa-pencil"></i> Edit this cocktail
+<% end %>
+
+
+
+<h2>Ingredients list</h2>
+<ul>
+
+  <% @cocktail.doses.each do |dose| %>
+  <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+  <%= link_to dose_path(dose), method: :delete, data: { confirm: "Delete ?" } do %><i class="fa fa-history"></i> Delete
+  <% end %>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to new_cocktail_dose_path(@cocktail) do %>
+  <i class="fa fa-history"></i> Choose dose & ingredient
+<% end %>
+
+<hr>
+<%= link_to cocktails_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
+
+</div>
+
