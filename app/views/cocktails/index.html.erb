@@ -1,9 +1,12 @@
-<div class="home-banner">
+
+<body background="back">
+<div class="container">
 <h1>Cocktails</h1>
 
 <% @cocktails.each do |cocktail| %>
-  <h2><%= cocktail.name %></h2>
+<h2>
   <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+</h2>
 
 <% end %>
 
@@ -16,5 +19,7 @@
   <% end  %>
 
 </div>
+
+</body>
 
 
