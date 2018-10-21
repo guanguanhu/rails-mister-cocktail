@@ -1,14 +1,23 @@
+<body>
+  <div class="container">
 <h1><%= @cocktail.name %></h1>
 
 <div class="container">
   <%= link_to edit_cocktail_path(@cocktail), class: 'pull-right btn btn-default' do %>
   <i class="fa fa-pencil"></i> Edit this cocktail
 <% end %>
-
+<br>
+<br>
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
 
 
 <h2>Ingredients list</h2>
 <ul>
+
+  </div>
+</body>
+
+
 
   <% @cocktail.doses.each do |dose| %>
   <li><%= dose.description %> of <%= dose.ingredient.name %></li>

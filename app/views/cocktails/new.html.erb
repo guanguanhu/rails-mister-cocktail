@@ -1,8 +1,14 @@
-<h1>cocktails#New</h1>
+<body>
+  <div class="container">
+    <h1>New Cocktail</h1>
 
-<%= render 'form', cocktail: @cocktail %>
+      <%= render 'form', cocktail: @cocktail %>
 
-<hr>
-<%= link_to cocktails_path do %>
-  <i class="fa fa-history"></i> Back to list
-<% end %>
+      <hr>
+        <%= link_to cocktails_path do %>
+          <i class="fa fa-history"></i> Back to list
+        <% end %>
+
+  </div>
+</body>
+

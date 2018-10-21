@@ -1,25 +1,40 @@
 
-<body background="back">
-<div class="container">
-<h1>Cocktails</h1>
+<body>
 
-<% @cocktails.each do |cocktail| %>
-<h2>
-  <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-</h2>
-
-<% end %>
-
-<br>
-<br>
+    <div class="container">
+      <h1>COCKTAILS</h1>
 
 
-<%= link_to new_cocktail_path do %>
-  <i class="fa fa-plus"></i> Add a new cocktail
-  <% end  %>
+        <div class="row">
 
-</div>
+            <% @cocktails.each do |cocktail| %>
+              <div class="col-md-4 col-lg-4">
+                <div class="card_structure">
+                  <!-- <div class="card" style="background-image: url(<%= cocktail.photo %>)"> -->
+                    <%= link_to cocktail_path(cocktail.id) do%>
+                    <%= image_tag "#{cocktail.photo}", class: "card" %>
+                    <% end %>
+                 <!--  </div> -->
+                </div>
+                  <div calss="card_tag">
+                    <h4><%= link_to cocktail.name, cocktail_path(cocktail.id), :class => "whitec" %></h4>
+                  </div>
+              </div>
+            <% end %>
 
+        </div>
+
+    <div class="btn btn-dark">
+      <%= link_to new_cocktail_path, class: "pull-right btn btn-default" do %>
+        <i class="fa fa-pencil"></i>Add your cocktail
+        <% end %>
+    </div>
+    </div>
+
+
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_pack_tag "application" %>
 </body>
 
 
